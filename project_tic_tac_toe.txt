@@ -1,0 +1,46 @@
+import random
+def player_move(board):
+    position =int(input("which position do you want to move? "))
+    if position>=0 and position <20 and board[position] == "-":
+      board = board[:position]+ board[position:].replace(board[position], "x", 1)
+      print(board, "\n")
+    else:
+      print("This position is already occupied \n")
+      print(board)
+    return board
+
+def pc_move(board): # # Returns a game board with the computer's move.
+  position_pc = random.randrange(0, 20)
+  print("pc position is:", position_pc, "\n")
+  if board[position_pc] == "-":
+      board = board[:position_pc]+ board[position_pc:].replace(board[position_pc], "o", 1)
+      print(board, "\n")
+  else:
+      print("this position is occupied by another user \n")
+      print(board)
+  return board
+
+def evaluate (board): # checks the board, if it is full, not full, somebody won?
+ if element1 in board:
+   print("x won")  #if true - must be stopped
+   return True
+ elif element2 in board:
+   print("o won") # if true -must be stopped
+   return True
+ elif element3 not in board:
+   print("board is full, end of the game \n")  # if true - must be stopped
+   return True
+ else:
+   print("next round \n")
+   return False
+
+board = 20 * "-"
+element1 = "xxx"
+element2 ="ooo"
+element3 = "-"
+print("This is the board field:\n", board)
+while evaluate(board)==False: #as long as no one won and the board is not full, the game will be continued
+  board = player_move(board)
+  board = pc_move(board)
+
+
