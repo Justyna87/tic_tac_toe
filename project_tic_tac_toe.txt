@@ -21,13 +21,13 @@ def pc_move(board): # # Returns a game board with the computer's move.
   return board
 
 def evaluate (board): # checks the board, if it is full, not full, somebody won?
- if element1 in board:
+ if x_won in board:
    print("x won")  #if true - must be stopped
    return True
- elif element2 in board:
+ elif o_won in board:
    print("o won") # if true -must be stopped
    return True
- elif element3 not in board:
+ elif element not in board:
    print("board is full, end of the game \n")  # if true - must be stopped
    return True
  else:
@@ -35,9 +35,9 @@ def evaluate (board): # checks the board, if it is full, not full, somebody won?
    return False
 
 board = 20 * "-"
-element1 = "xxx"
-element2 ="ooo"
-element3 = "-"
+x_won = "xxx"
+o_won ="ooo"
+element = "-"
 print("This is the board field:\n", board)
 while evaluate(board)==False: #as long as no one won and the board is not full, the game will be continued
   board = player_move(board)
