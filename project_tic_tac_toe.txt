@@ -42,5 +42,3 @@ print("This is the board field:\n", board)
 while evaluate(board)==False: #as long as no one won and the board is not full, the game will be continued
   board = player_move(board)
   board = pc_move(board)
-
-
