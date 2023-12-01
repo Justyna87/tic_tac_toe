@@ -1,5 +1,5 @@
 import random
-def player_move(board):  #this function works perfectly :)
+def player_move(board):  
     position =int(input("which position do you want to move? "))
     if position>=0 and position <20:
       while board[position] != "-":
