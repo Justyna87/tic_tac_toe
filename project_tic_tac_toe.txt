@@ -32,8 +32,8 @@ def evaluate (board): # checks the board, if it is full, not full, somebody won?
  if x_won in board:
    print("x won")  #if true - must be stopped
    return True
- elif element2 in board:
-   o_won("o won") # if true -must be stopped
+ elif o_won in board:
+   print("o won") # if true -must be stopped
    return True
  elif element3 not in board:
    print("board is full, end of the game \n")  # if true - must be stopped
@@ -46,7 +46,7 @@ board = 20 * "-"
 x_won = "xxx"
 o_won ="ooo"
 element3 = "-"
-print("This is the board field:\n", board)
+print("This is the board field:\n", board , "\n to play pick the number between 0 and 19")
 while evaluate(board)==False: #as long as no one won, the game will be continued
     board = player_move(board)
     board = pc_move(board)
